@@ -1,19 +1,19 @@
 # DeveloperHub Internship Task 1
 
-Production-ready MERN eCommerce web application with dynamic product browsing, product detail pages, cart + checkout, order creation, coupon validation, and separate frontend/backend deployment on Vercel.
+Production-ready MERN eCommerce web application with dynamic product browsing, product detail pages, cart and checkout, order creation, coupon validation, and separate frontend/backend deployment support on Vercel.
 
 ## Project Highlights
 
 - Dynamic product catalog from MongoDB
-- Search, category filtering, sort, grid/list views
+- Search, category filtering, sort, and grid/list views
 - Product details with related products
 - Cart management with quantity updates
 - Checkout flow with shipping details
 - Order creation and order listing API
 - Server-driven coupon validation
-- Locked coupon input/apply state after successful coupon apply
+- Coupon input and apply button lock after successful apply
 - Responsive UI with reusable components
-- Separate frontend and backend deployment setup for Vercel
+- Separate frontend and backend deployment setup
 
 ## Tech Stack
 
@@ -58,14 +58,14 @@ Task 1/
 
 ## Local Setup
 
-## 1) Backend
+### 1) Backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Create `backend/.env` from `backend/.env.example` and set values.
+Create backend/.env from backend/.env.example and set values.
 
 Run backend:
 
@@ -79,14 +79,14 @@ Optional seed data:
 npm run seed
 ```
 
-## 2) Frontend
+### 2) Frontend
 
 ```bash
 cd frontend
 npm install
 ```
 
-Create `frontend/.env` from `frontend/.env.example` and set values.
+Create frontend/.env from frontend/.env.example and set values.
 
 Run frontend:
 
@@ -96,65 +96,59 @@ npm run dev
 
 ## Environment Variables
 
-## Backend (`backend/.env`)
+### Backend (backend/.env)
 
-- `MONGO_URI` (required)
-- `DB_NAME` (recommended: `developerhub`)
-- `NODE_ENV` (recommended: `production` in deploy)
-- `CORS_ORIGIN` (required in production, frontend URL)
-- `MONGO_URI_FALLBACK` (optional)
-- `PORT` (local only, default 5000)
+- MONGO_URI (required)
+- DB_NAME (recommended: developerhub)
+- NODE_ENV (recommended: production in deployment)
+- CORS_ORIGIN (required in production)
+- MONGO_URI_FALLBACK (optional)
+- PORT (local only, default: 5000)
 
 Example:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<user>:<password>@<cluster>/<db>?retryWrites=true&w=majority
+MONGO_URI=your_mongodb_connection_string
 DB_NAME=developerhub
 NODE_ENV=production
-CORS_ORIGIN=https://your-frontend.vercel.app
-# MONGO_URI_FALLBACK=mongodb://...
+CORS_ORIGIN=your_frontend_origin
+# MONGO_URI_FALLBACK=your_optional_fallback_connection_string
 ```
 
-## Frontend (`frontend/.env`)
+### Frontend (frontend/.env)
 
-- `VITE_API_BASE_URL` (required)
+- VITE_API_BASE_URL (required)
 
 Example:
 
 ```env
-VITE_API_BASE_URL=https://your-backend.vercel.app/api
+VITE_API_BASE_URL=your_backend_api_base
 ```
 
 ## API Endpoints
 
-Base URL: `/api`
+Base path: /api
 
-- `GET /health` -> health check
-- `GET /products` -> list products
-- `GET /products/:id` -> product details
-- `GET /orders` -> list latest orders
-- `POST /orders` -> create order
-- `POST /coupons/validate` -> validate coupon code
+- GET /health
+- GET /products
+- GET /products/:id
+- GET /orders
+- POST /orders
+- POST /coupons/validate
 
 ### Product Query Params
 
-- `keyword`
-- `category`
-- `sort` (`newest`, `price_asc`, `price_desc`, `name_asc`)
-
-Example:
-
-```http
-GET /api/products?category=electronics&sort=price_desc
-```
+- keyword
+- category
+- sort (newest, price_asc, price_desc, name_asc)
 
 ## Coupon Rules
 
 The backend ensures these coupons exist in MongoDB automatically:
 
-- `233606DA` -> 50% discount
-- `233544SA` -> 35% discount
+- 233606DA => 50% discount
+- 233544SA => 35% discount
 
 Checkout behavior:
 
@@ -164,44 +158,43 @@ Checkout behavior:
 
 ## Vercel Deployment (Separate Projects)
 
-## Backend Project (Root Directory: `backend`)
+### Backend Project (Root Directory: backend)
 
-- Framework Preset: `Other`
-- Install Command: `npm install`
+- Framework Preset: Other
+- Install Command: npm install
 - Build Command: leave empty
 - Output Directory: leave empty
-- Development Command: `npm run start`
+- Development Command: npm run start
 
 Required env vars:
 
-- `MONGO_URI`
-- `DB_NAME`
-- `NODE_ENV=production`
-- `CORS_ORIGIN=https://your-frontend.vercel.app`
-- Optional: `MONGO_URI_FALLBACK`
+- MONGO_URI
+- DB_NAME
+- NODE_ENV=production
+- CORS_ORIGIN
+- Optional: MONGO_URI_FALLBACK
 
-## Frontend Project (Root Directory: `frontend`)
+### Frontend Project (Root Directory: frontend)
 
-- Framework Preset: `Vite`
-- Install Command: `npm install`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Development Command: `npm run dev`
+- Framework Preset: Vite
+- Install Command: npm install
+- Build Command: npm run build
+- Output Directory: dist
+- Development Command: npm run dev
 
 Required env var:
 
-- `VITE_API_BASE_URL=https://your-backend.vercel.app/api`
+- VITE_API_BASE_URL
 
 ## Deployment Order
 
 1. Deploy backend first.
-2. Copy backend URL.
-3. Set frontend `VITE_API_BASE_URL`.
-4. Deploy frontend.
+2. Set frontend VITE_API_BASE_URL.
+3. Deploy frontend.
 
 ## Verification Checklist
 
-- Backend `/api/health` responds with `{"status":"ok"}`
+- Backend /api/health responds with status ok
 - Coupon validation API works for both hardcoded coupons
 - Frontend loads products from backend
 - Cart and checkout flow works end-to-end
@@ -212,18 +205,14 @@ Required env var:
 
 ### Backend
 
-- `npm run start` -> start server
-- `npm run dev` -> start with nodemon
-- `npm run seed` -> seed products + ensure coupons
-- `npm run seed:destroy` -> destroy product data
+- npm run start
+- npm run dev
+- npm run seed
+- npm run seed:destroy
 
 ### Frontend
 
-- `npm run dev` -> start dev server
-- `npm run lint` -> run ESLint
-- `npm run build` -> production build
-- `npm run preview` -> preview production build
-
----
-
-If you want, I can also add a GitHub Actions workflow for automated lint/build checks on every push.
+- npm run dev
+- npm run lint
+- npm run build
+- npm run preview
