@@ -26,6 +26,7 @@ The application provides a complete, production-ready shopping experience from b
 ### Why This Project?
 
 This project showcases:
+
 - ✅ Full-stack development expertise
 - ✅ RESTful API design patterns
 - ✅ Modern React 19 best practices
@@ -38,28 +39,33 @@ This project showcases:
 ## ✨ Key Features
 
 ### 🏪 Product Management
+
 - **Dynamic Product Catalog** - Browse a rich collection of products fetched from MongoDB in real-time
 - **Advanced Search & Filtering** - Find products by keyword, category, and apply intelligent sorting (newest, price ascending/descending, name)
 - **Detailed Product Pages** - Comprehensive product information with image galleries and related product recommendations
 
 ### 🛒 Shopping Experience
+
 - **Intuitive Cart Management** - Add, remove, and modify item quantities with instant total calculations
 - **Persistent Cart** - Cart data is maintained across browser sessions for better user experience
 - **Real-time Price Updates** - Automatic recalculation of totals with tax and discount considerations
 
 ### 💰 Checkout & Payments
+
 - **Complete Checkout Flow** - Multi-step process collecting shipping and billing information
 - **Intelligent Order Processing** - Seamless order creation and management
 - **Smart Coupon System** - Server-driven validation with automatic field locking after successful application
 - **Discount Tracking** - Clear visibility of applied discounts and final pricing
 
 ### 🎨 User Interface
+
 - **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 - **Modern UI Components** - Built with Tailwind CSS for a clean, contemporary aesthetic
 - **Accessibility First** - WCAG compliant interface ensuring usability for all users
 - **Smooth Interactions** - Polished animations and transitions for professional feel
 
 ### 🚀 Technical Excellence
+
 - **Serverless Architecture Ready** - Optimized for modern cloud platforms like Vercel
 - **Separation of Concerns** - Clean frontend/backend architecture for scalability
 - **Production-Grade CORS** - Secure cross-origin resource sharing configuration
@@ -70,22 +76,24 @@ This project showcases:
 ## 🛠️ Tech Stack
 
 ### Frontend Stack
-| Technology | Purpose |
-|---|---|
-| **React 19** | UI library with latest features and hooks |
-| **Vite 8** | Lightning-fast build tool and dev server |
-| **React Router DOM 7** | Client-side routing and navigation |
-| **Tailwind CSS** | Utility-first CSS framework for styling |
-| **Axios** | HTTP client for API communication |
+
+| Technology             | Purpose                                   |
+| ---------------------- | ----------------------------------------- |
+| **React 19**           | UI library with latest features and hooks |
+| **Vite 8**             | Lightning-fast build tool and dev server  |
+| **React Router DOM 7** | Client-side routing and navigation        |
+| **Tailwind CSS**       | Utility-first CSS framework for styling   |
+| **Axios**              | HTTP client for API communication         |
 
 ### Backend Stack
-| Technology | Purpose |
-|---|---|
-| **Node.js (≥20)** | JavaScript runtime environment |
-| **Express.js 5** | Minimalist web application framework |
-| **MongoDB** | NoSQL database for data persistence |
-| **Mongoose** | Object Data Modeling (ODM) for MongoDB |
-| **CORS + dotenv** | Security and configuration management |
+
+| Technology        | Purpose                                |
+| ----------------- | -------------------------------------- |
+| **Node.js (≥20)** | JavaScript runtime environment         |
+| **Express.js 5**  | Minimalist web application framework   |
+| **MongoDB**       | NoSQL database for data persistence    |
+| **Mongoose**      | Object Data Modeling (ODM) for MongoDB |
+| **CORS + dotenv** | Security and configuration management  |
 
 ---
 
@@ -128,6 +136,7 @@ This project showcases:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js version 20 or higher
 - npm or yarn package manager
 - MongoDB database (local or cloud)
@@ -196,22 +205,24 @@ npm run seed           # Populate database with sample products
 ## 📊 API Overview
 
 ### Base URL
+
 ```
 http://localhost:5000/api
 ```
 
 ### Core Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/health` | Server health check |
-| `GET` | `/products` | Fetch all products with filters |
-| `GET` | `/products/:id` | Get single product details |
-| `GET` | `/orders` | Retrieve all orders |
-| `POST` | `/orders` | Create new order |
-| `POST` | `/coupons/validate` | Validate and apply coupon code |
+| Method | Endpoint            | Description                     |
+| ------ | ------------------- | ------------------------------- |
+| `GET`  | `/health`           | Server health check             |
+| `GET`  | `/products`         | Fetch all products with filters |
+| `GET`  | `/products/:id`     | Get single product details      |
+| `GET`  | `/orders`           | Retrieve all orders             |
+| `POST` | `/orders`           | Create new order                |
+| `POST` | `/coupons/validate` | Validate and apply coupon code  |
 
 ### Query Parameters (Products)
+
 - `keyword` - Search products by name or description
 - `category` - Filter by category
 - `sort` - Sort results (newest, price_asc, price_desc, name_asc)
@@ -223,12 +234,14 @@ http://localhost:5000/api
 The application includes a server-driven coupon validation system for applying discounts:
 
 ### Available Coupons
+
 | Coupon Code | Discount | Status |
-|---|---|---|
-| `233606DA` | 50% off | Active |
-| `233544SA` | 35% off | Active |
+| ----------- | -------- | ------ |
+| `233606DA`  | 50% off  | Active |
+| `233544SA`  | 35% off  | Active |
 
 ### Coupon Features
+
 - ✅ Server-side validation
 - ✅ Automatic field locking after successful application
 - ✅ Real-time discount calculation
@@ -236,6 +249,7 @@ The application includes a server-driven coupon validation system for applying d
 - ✅ Cannot apply multiple coupons
 
 ### How to Use
+
 1. Navigate to checkout page
 2. Enter coupon code in the discount field
 3. Click "Apply Coupon" button
@@ -247,6 +261,7 @@ The application includes a server-driven coupon validation system for applying d
 ## 📦 Available Scripts
 
 ### Backend
+
 ```bash
 npm run start           # Run in production mode
 npm run dev            # Run in development mode
@@ -255,6 +270,7 @@ npm run seed:destroy   # Clear database
 ```
 
 ### Frontend
+
 ```bash
 npm run dev            # Start development server
 npm run build          # Build for production
@@ -266,16 +282,66 @@ npm run preview        # Preview production build locally
 
 ## 🌐 Deployment
 
-This project is optimized for modern cloud deployments:
+This project is optimized for production-grade cloud deployments on Vercel with separate frontend and backend projects.
 
-### Vercel Deployment
-- ✅ Frontend deployment ready (Vite SPA)
-- ✅ Backend serverless API support
+### 🚀 Production Deployment
+
+The complete deployment documentation is organized into separate guides for your convenience:
+
+#### 📘 [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) - **START HERE**
+Comprehensive step-by-step guide covering:
+- ✅ Backend deployment on Vercel
+- ✅ Frontend deployment on Vercel  
+- ✅ Environment variables configuration
+- ✅ CORS setup between frontend and backend
+- ✅ Production verification tests
+- ✅ Troubleshooting common issues
+
+#### 🔧 [ENVIRONMENT_VARIABLES_GUIDE.md](./ENVIRONMENT_VARIABLES_GUIDE.md)
+Exact environment variables with:
+- ✅ Copy-paste ready templates
+- ✅ MongoDB setup instructions
+- ✅ Variable explanations
+- ✅ Common mistakes to avoid
+- ✅ Local development setup
+
+#### 📋 [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)
+Production readiness checklist with:
+- ✅ Pre-deployment preparation
+- ✅ Configuration verification
+- ✅ Testing procedures
+- ✅ Security verification
+- ✅ Performance checks
+
+### Quick Deployment Overview
+
+| Aspect | Details |
+|--------|---------|
+| **Frontend** | Vite React SPA on Vercel |
+| **Backend** | Node.js Express serverless on Vercel |
+| **Database** | MongoDB Atlas (cloud) |
+| **Hosting** | Separate Vercel projects |
+| **HTTPS** | Automatic with Vercel |
+| **CI/CD** | Automatic on Git push |
+
+### Deployment Features
+
+- ✅ Frontend deployment ready (Vite SPA with auto-routing)
+- ✅ Backend serverless API support (Vercel Functions)
 - ✅ Separate project deployment capability
-- ✅ Environment variable configuration
-- ✅ Automated CI/CD ready
+- ✅ Environment variable configuration (Production/Preview/Development)
+- ✅ Automated CI/CD on repository push
+- ✅ Production-grade CORS configuration
+- ✅ Global CDN distribution
+- ✅ Automatic SSL/HTTPS
+- ✅ Serverless scaling
 
-For detailed deployment instructions, refer to `VERCEL_DEPLOYMENT.md`
+### Deployment Order
+
+1. **Deploy Backend First** → Get backend URL
+2. **Deploy Frontend** → Connect to backend
+3. **Update Backend CORS** → Add frontend URL
+4. **Redeploy Backend** → Apply CORS changes
 
 ---
 
@@ -306,6 +372,7 @@ Contributions are welcome! Here's how you can help:
 5. Open a Pull Request
 
 ### Code Standards
+
 - Follow existing code style and conventions
 - Write meaningful commit messages
 - Ensure all tests pass before submitting PR
@@ -339,6 +406,7 @@ This project was created as part of the professional internship program to demon
 ## 📞 Support & Questions
 
 For questions or support:
+
 - 📧 Open an issue in the repository
 - 💬 Check existing documentation
 - 🔍 Review code comments for implementation details
